@@ -1,0 +1,79 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'maskitApp/css/manage.css' %}" media="screen"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed&family=Roboto+Mono:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<title>MaskIt</title>
+</head>
+<nav>
+    <div id="navhead">
+        <img id="logo" src="media/maskitapp/images/logo.png"><img id="maskit" src="media/maskitapp/images/maskit.png">
+    </div>
+    <div id="links">
+        <a href="index">Home</a>
+        <a class="active" href="manage">Manage</a>
+        <a href="livefeed">Live Feed</a>
+        <a href="history">History</a>
+        <a href="account" class="button">Login</a>
+    </div>
+</nav>
+<body>
+    <div id="title">
+        <h3>Manage Employees</h3>
+        <div id="addEmployee">
+            <p>Add Employee</p>
+            <a href="add.html">
+                <div id="addSign">
+                    <i class="fas fa-plus"></i>
+                </div>
+            </a>
+        </div>
+    </div>
+    <div id="employees">
+        <div class="employee">
+            <div class="circle">
+                <img src="bg.jpg">
+            </div>
+            <p>Jack Hills</p>
+        </div>
+        <div class="employee">
+            <div class="circle">
+                <img src="bg.jpg">
+            </div>
+            <p>Jack Hills</p>
+        </div>
+        <div class="employee">
+            <div class="circle">
+                <img src="bg.jpg">
+            </div>
+            <p>Jack Hills</p>
+        </div>
+        <div class="employee">
+            <div class="circle">
+                <img src="bg.jpg">
+            </div>
+            <p>Jack Hills</p>
+        </div>
+        <div class="employee">
+            <div class="circle">
+                <img src="bg.jpg">
+            </div>
+            <p>Jack Hills</p>
+        </div>
+        <div class="employee">
+            <div class="circle">
+                <a href="add.html">
+                    <i class="fas fa-plus"></i>
+                </a>
+            </div>
+            <p class="addP">Add Employee</p>
+        </div>
+    </div>
+</body>
+<footer><p>©2021 MaskIt. All Rights Reserved.</p></footer>

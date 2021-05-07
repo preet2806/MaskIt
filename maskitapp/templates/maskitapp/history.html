@@ -1,0 +1,70 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'maskitApp/css/history.css' %}" media="screen"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed&family=Roboto+Mono:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<title>MaskIt</title>
+</head>
+<nav>
+    <div id="navhead">
+        <img id="logo" src="media/maskitapp/images/logo.png"><img id="maskit" src="media/maskitapp/images/maskit.png">
+    </div>
+    <div id="links">
+        <a href="index">Home</a>
+        <a href="manage">Manage</a>
+        <a href="livefeed">Live Feed</a>
+        <a href="history">History</a>
+        <a href="account" class="button">Login</a>
+    </div>
+</nav>
+<body>
+    <div id="title">
+        <h3>Violation History</h3>
+        <div id="camera">
+            <p>Camera Settings</p>
+            <div id="addSign">
+                <i class="fas fa-cog"></i>
+            </div>
+        </div>
+    </div>
+    <div id="view">
+        <p>View From:</p>
+        <div class="select"><div id="dateFrom">25/02/20</div><div id="timeFrom">09:00:00</div></div>
+        <p>View To:</p>
+        <div class="select"><div id="dateTo">25/02/20</div><div id="timeTo">15:00:00</div></div>
+    </div>
+    <div id="table">
+        <div class="row" id=tableHeading>
+            <p>Name</p>
+            <p>Contact Number</p>
+            <p>Time</p>
+        </div>
+        <div class="row">
+            <p>John Hills</p>
+            <p>999999999</p>
+            <div class="timing"><div class="date"><p>25/02/20</p></div><div class="time"><p>09:41:00</p></div></div>
+        </div>
+        <div class="row">
+            <p>John Hills</p>
+            <p>999999999</p>
+            <div class="timing"><div class="date"><p>25/02/20</p></div><div class="time"><p>09:41:00</p></div></div>
+        </div>
+        <div class="row">
+            <p>John Hills</p>
+            <p>999999999</p>
+            <div class="timing"><div class="date"><p>25/02/20</p></div><div class="time"><p>09:41:00</p></div></div>
+        </div>
+        <div class="row">
+            <p>John Hills</p>
+            <p>999999999</p>
+            <div class="timing"><div class="date"><p>25/02/20</p></div><div class="time"><p>09:41:00</p></div></div>
+        </div>
+    </div>
+</body>
+<footer><p>©2021 MaskIt. All Rights Reserved.</p></footer>

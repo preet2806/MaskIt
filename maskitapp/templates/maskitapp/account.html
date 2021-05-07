@@ -1,0 +1,51 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'maskitApp/css/account.css' %}" media="screen"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed&family=Roboto+Mono:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<title>MaskIt</title>
+</head>
+<nav>
+    <div id="navhead">
+        <img id="logo" src="media/maskitapp/images/logo.png"><img id="maskit" src="media/maskitapp/images/maskit.png">
+    </div>
+    <div id="links">
+        <a href="index.html">Home</a>
+        <a href="manage.html">Manage</a>
+        <a href="livefeed.html">Live Feed</a>
+        <a href="history.html">History</a>
+        <a href="account.html" class="button">Login</a>
+    </div>
+</nav>
+<body>
+    <div id="title">
+        <h3>Account Settings</h3>
+        <div id="change">
+            <p>Change Password</p>
+            <div id="addSign">
+                <i class="fas fa-cog"></i>
+            </div>
+        </div>
+    </div>
+    <div id="account">
+        <form id="accountForm">
+            <label for="name"><p>Company Name</p></label>
+            <input  name="name" type="text">
+            <label for="email"><p>Comapny Email</p></label>
+            <input name="email" type="email">
+            <label for="message"><p>Customised Alert Message</p></label>
+            <input name="message" class="message" type="text">
+            <div id="buttons">
+                <button class="logout" type="button">Log out</button>
+                <button class="save" type="submit">Save</button>
+            </div>
+        </form>
+    </div>
+</body>
+<footer><p>©2021 MaskIt. All Rights Reserved.</p></footer>

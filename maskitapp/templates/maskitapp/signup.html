@@ -1,0 +1,52 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.14.0/css/all.css" integrity="sha384-HzLeBuhoNPvSl5KYnjx0BT+WB0QEEqLprO+NBkkk5gbc67FTaL7XIGa2w1L0Xbgc" crossorigin="anonymous">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="{% static 'maskitApp/css/account.css' %}" media="screen"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed&family=Roboto+Mono:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
+<title>MaskIt</title>
+</head>
+<nav>
+    <div id="navhead">
+        <img id="logo" src="media/maskitapp/images/logo.png"><img id="maskit" src="media/maskitapp/images/maskit.png">
+    </div>
+    <div id="links">
+        <a href="index">Home</a>
+        <a href="manage">Manage</a>
+        <a href="livefeed">Live Feed</a>
+        <a href="history">History</a>
+        <a href="account" class="button">Login</a>
+    </div>
+</nav>
+<body>
+    <div id="title">
+        <h3>Sign Up</h3>
+        <div id="about">
+            <p>About Us</p>
+            <a href="index.html">
+                <div id="addSign">
+                    <i class="fas fa-question"></i>
+                </div>
+            </a>
+            
+        </div>
+    </div>
+    <div id="account">
+        <form id="accountForm" method="POST">
+            {{ form }}
+            <div id="button">
+                <button class="signup" type="submit">Sign Up</button>
+            </div>
+            {% csrf_token %}{{ error }}
+        </form>
+        <div id="login">
+            <p2>already have an account?   <a href="login">login</a></p2>
+        </div>
+    </div>
+</body>
+<footer><p>©2021 MaskIt. All Rights Reserved.</p></footer>
