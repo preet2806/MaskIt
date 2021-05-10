@@ -20,7 +20,7 @@
         <a href="manage">Manage</a>
         <a href="livefeed">Live Feed</a>
         <a href="history">History</a>
-        <a href="account" class="button">Login</a>
+        <a href="account" class="button">{{login}}</a>
     </div>
 </nav>
 <body>
@@ -37,7 +37,7 @@
         </div>
     </div>
     <div id="account">
-        <form id="accountForm">
+        <form id="accountForm" method="POST">
             <label for="name"><p>Company Name</p></label>
             <input name="name" type="text">
             <label for="email"><p>Comapny Email</p></label>
@@ -47,6 +47,7 @@
             <div id="button">
                 <button class="signup" type="submit">Sign Up</button>
             </div>
+            {% csrf_token %}{{ error }}
         </form>
         <div id="login">
             <p2>already have an account?   <a href="login">login</a></p2>

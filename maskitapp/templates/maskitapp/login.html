@@ -20,7 +20,7 @@
         <a href="manage">Manage</a>
         <a href="livefeed">Live Feed</a>
         <a href="history">History</a>
-        <a href="account" class="button">Login</a>
+        <a href="account" class="button">{{login}}</a>
     </div>
 </nav>
 <body>
@@ -37,9 +37,9 @@
         </div>
     </div>
     <div id="account">
-        <form id="accountForm" method='POST'>
+        <form id="accountForm" method='POST' action="login">
             <label for="username"><p>Username</p></label>
-            <input name="username" type="email">
+            <input name="username" type="text">
             <label for="password"><p>Password</p></label>
             <input name="password" type="password">
             <div id="button">

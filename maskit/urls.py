@@ -30,8 +30,8 @@ urlpatterns = [
     path('account',views.account),
     path('add',views.add),
     path('edit',views.edit),
+    path('gotoedit',views.gotoedit),
     path('history',views.history),
     path('livefeed',views.livefeed),
-    path('signup2',views.signupview), 
     
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

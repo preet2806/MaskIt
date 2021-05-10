@@ -135,8 +135,19 @@ footer{
     padding: 0px 95px;
     display: flex;
     justify-content: space-between;
-    width: 55%;
+    width: 65%;
     align-items: center;
+}
+#view button{
+    height: 30px;
+    width: 100px;
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    border: 1px solid #6CAFB2;
+}
+#view input{
+    background-color: transparent;
+    border: none;
 }
 .select{
     display: inherit;

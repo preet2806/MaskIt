@@ -169,3 +169,8 @@ footer{
 .addP{
     color: #d9d9d9;
 }
+button{
+    appearance: unset;
+    background-color: transparent;
+    border: none;
+}

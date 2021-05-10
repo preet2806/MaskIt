@@ -10,6 +10,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed&family=Roboto+Mono:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <title>MaskIt</title>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
+<script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+
+
+<script>
+    // This code activates flatpickr on fields with the 'datetimefield' class when the document has loaded
+    window.addEventListener("DOMContentLoaded", function () {
+        flatpickr(".datetimefield", {
+            enableTime: true,
+            enableSeconds: true,
+            dateFormat: "Y-m-d H:i:S",
+        });
+    });
+</script>
 </head>
 <nav>
     <div id="navhead">
@@ -19,8 +33,8 @@
         <a href="index">Home</a>
         <a href="manage">Manage</a>
         <a href="livefeed">Live Feed</a>
-        <a href="history">History</a>
-        <a href="account" class="button">Login</a>
+        <a class="active" href="history">History</a>
+        <a href="account" class="button">{{login}}</a>
     </div>
 </nav>
 <body>
@@ -33,38 +47,29 @@
             </div>
         </div>
     </div>
+    <form method="POST" action="history">
     <div id="view">
         <p>View From:</p>
-        <div class="select"><div id="dateFrom">25/02/20</div><div id="timeFrom">09:00:00</div></div>
+        <div class="select"><input name="from" placeholder="select" class="datetimefield" type="datetime-local"></div>
         <p>View To:</p>
-        <div class="select"><div id="dateTo">25/02/20</div><div id="timeTo">15:00:00</div></div>
+        <div class="select"><input name="to" class="datetimefield" placeholder="select" type="datetime-local"></div>
+        {%csrf_token%}
+        <button type="submit">Go</button>
     </div>
+    </form>
     <div id="table">
-        <div class="row" id=tableHeading>
+        <div class="row" id="tableHeading">
             <p>Name</p>
             <p>Contact Number</p>
             <p>Time</p>
         </div>
+        {% for historyrow in historylist %}
         <div class="row">
-            <p>John Hills</p>
-            <p>999999999</p>
-            <div class="timing"><div class="date"><p>25/02/20</p></div><div class="time"><p>09:41:00</p></div></div>
+            <p>{{historyrow.employee.name}}</p>
+            <p>{{historyrow.employee.number}}</p>
+            <div class="timing"><p>{{historyrow.timestamp}}</p></div>
         </div>
-        <div class="row">
-            <p>John Hills</p>
-            <p>999999999</p>
-            <div class="timing"><div class="date"><p>25/02/20</p></div><div class="time"><p>09:41:00</p></div></div>
-        </div>
-        <div class="row">
-            <p>John Hills</p>
-            <p>999999999</p>
-            <div class="timing"><div class="date"><p>25/02/20</p></div><div class="time"><p>09:41:00</p></div></div>
-        </div>
-        <div class="row">
-            <p>John Hills</p>
-            <p>999999999</p>
-            <div class="timing"><div class="date"><p>25/02/20</p></div><div class="time"><p>09:41:00</p></div></div>
-        </div>
+        {% endfor %}
     </div>
 </body>
 <footer><p>©2021 MaskIt. All Rights Reserved.</p></footer>

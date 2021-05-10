@@ -20,7 +20,7 @@
         <a href="manage">Manage</a>
         <a class="active" href="livefeed">Live Feed</a>
         <a href="history">History</a>
-        <a href="account" class="button">Login</a>
+        <a href="account" class="button">{{login}}</a>
     </div>
 </nav>
 <body>
@@ -38,36 +38,14 @@
     </div>
     <h3 id="violators">Violators at the moment:</h3>
     <div id="employees">
+        {% for violator in violatorlist %}
         <div class="employee">
             <div class="circle">
-                <img src="bg.jpg">
+                <img src="{{ MEDIA_URL }}{{ violator.employee.image1 }}">
             </div>
-            <p>Jack Hills</p>
+            <p>{{violator.employee.name}}</p>
         </div>
-        <div class="employee">
-            <div class="circle">
-                <img src="bg.jpg">
-            </div>
-            <p>Jack Hills</p>
-        </div>
-        <div class="employee">
-            <div class="circle">
-                <img src="bg.jpg">
-            </div>
-            <p>Jack Hills</p>
-        </div>
-        <div class="employee">
-            <div class="circle">
-                <img src="bg.jpg">
-            </div>
-            <p>Jack Hills</p>
-        </div>
-        <div class="employee">
-            <div class="circle">
-                <img src="bg.jpg">
-            </div>
-            <p>Jack Hills</p>
-        </div>
+        {% endfor %}
     </div>
 </body>
 <footer><p>©2021 MaskIt. All Rights Reserved.</p></footer>

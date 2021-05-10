@@ -20,7 +20,7 @@
         <a class="active" href="manage">Manage</a>
         <a href="livefeed">Live Feed</a>
         <a href="history">History</a>
-        <a href="account" class="button">Login</a>
+        <a href="account" class="button">{{login}}</a>
     </div>
 </nav>
 <body>
@@ -28,7 +28,7 @@
         <h3>Manage Employees</h3>
         <div id="addEmployee">
             <p>Add Employee</p>
-            <a href="add.html">
+            <a href="add">
                 <div id="addSign">
                     <i class="fas fa-plus"></i>
                 </div>
@@ -36,44 +36,23 @@
         </div>
     </div>
     <div id="employees">
+        {% for emp in allemp %}
+        <form method="POST" action="gotoedit"><div class="employee">
+            <button type="submit"><div class="circle">
+                <img src="{{ emp.image1.url }}">{%csrf_token%}
+            </div></button><input type="hidden" name="empid" value="{{emp.employee_id}}">
+            <p>{{emp.name}}</p>
+        </div></form>
+        {% endfor %}
         <div class="employee">
             <div class="circle">
-                <img src="bg.jpg">
-            </div>
-            <p>Jack Hills</p>
-        </div>
-        <div class="employee">
-            <div class="circle">
-                <img src="bg.jpg">
-            </div>
-            <p>Jack Hills</p>
-        </div>
-        <div class="employee">
-            <div class="circle">
-                <img src="bg.jpg">
-            </div>
-            <p>Jack Hills</p>
-        </div>
-        <div class="employee">
-            <div class="circle">
-                <img src="bg.jpg">
-            </div>
-            <p>Jack Hills</p>
-        </div>
-        <div class="employee">
-            <div class="circle">
-                <img src="bg.jpg">
-            </div>
-            <p>Jack Hills</p>
-        </div>
-        <div class="employee">
-            <div class="circle">
-                <a href="add.html">
+                <a href="add">
                     <i class="fas fa-plus"></i>
                 </a>
             </div>
             <p class="addP">Add Employee</p>
         </div>
     </div>
+    {{html}}
 </body>
 <footer><p>©2021 MaskIt. All Rights Reserved.</p></footer>

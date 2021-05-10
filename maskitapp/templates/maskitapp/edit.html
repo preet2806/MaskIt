@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="add.css" media="screen"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'maskitApp/css/add.css' %}" media="screen"/>
     <link rel="preconnect" href="https://fonts.gstatic.com">
 <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&family=Roboto+Condensed&family=Roboto+Mono:wght@300&family=Roboto:wght@300&display=swap" rel="stylesheet">
 <title>MaskIt</title>
@@ -20,7 +20,7 @@
         <a href="manage">Manage</a>
         <a href="livefeed">Live Feed</a>
         <a href="history">History</a>
-        <a href="account" class="button">Login</a>
+        <a href="account" class="button">{{login}}</a>
     </div>
 </nav>
 <body>
@@ -31,31 +31,33 @@
                 <i class="fas fa-plus"></i>
                 <p2>Image 1</p2>
            </div>
-           <form>
+           <form method="POST" action="edit">
+                {%csrf_token%}
                 <label for="name" ><p>Name</p></label>
-                <input name="name" type="text">
+                <input name="name" placeholder="{{name}}" value="{{name}}" type="text">
                 <label for="number"><p>Contact Number</p></label>
-                <input name="number" type="tel">
+                <input name="number" placeholder="{{number}}" value="{{number}}" type="tel">
                 <label for="images"><p>Add Images</p></label>
                 <div id="images">
                         <div class="file-input">
-                            <input type="file" id="image1" class="file">
+                            <input type="file" name="image1" class="file">
                             <label for="file">Image 1</label>
                         </div>
                         <div class="file-input">
-                            <input type="file" id="image2" class="file">
+                            <input type="file" name="image2" class="file">
                             <label for="file">Image 2</label>
                         </div>
                         <div class="file-input">
-                            <input type="file" id="image3" class="file">
+                            <input type="file" name="image3" class="file">
                             <label for="file">Image 3</label>
                         </div>
                 </div>
+                <input type="hidden" name="empid" value="{{empid}}">
                 <div id="button">
                     <button class="delete" type="button">Delete</button>
                 </div>
                 <div id="buttons">
-                    <button class="cancel" type="button">Cancel</button>
+                    <a class="cancel" href="manage">Cancel</a>
                     <button class="add" type="submit">Save</button>
                 </div>   
            </form>

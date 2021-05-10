@@ -120,9 +120,10 @@ form{
 }
 .file {
     opacity: 0;
-    width: 0.1px;
-    height: 0.1px;
+    width: 150px;
+    height: 40px;
     position: absolute;
+    z-index: 5;
 }
 input{
     border: 3px solid #D5D5D5;
@@ -192,17 +193,27 @@ input{
     border-radius: 10px;
     font-family: 'Roboto', sans-serif;
     font-size: 20px;
-    width: 140px;
-    height: 40px;
+    padding: 8px 55px;
+}
+#buttons a{
+    border-radius: 10px;
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    padding: 8px 35px;
 }
 .cancel{
     margin-right: 15px;
     border: 1px solid #D5D5D5;
     background-color: #ffffff;
 }
+.cancel:hover{
+    margin-right: 15px;
+    border: 1px solid #FF5A5F;
+    background-color: #ffffff;
+}
 .add{
     background-color: #6CAFB2;
-    border: none;
+    border: 1px solid #6CAFB2;
     color: #ffffff;
 }
 #button{
@@ -223,4 +234,7 @@ input{
     margin-right: 15px;
     border: 1px solid #FF5A5F;
     background-color: #ffffff;
+}
+.delete:hover{
+    background-color: #FF5A5F;
 }
