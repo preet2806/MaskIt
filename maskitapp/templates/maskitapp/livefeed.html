@@ -41,7 +41,7 @@
         {% for violator in violatorlist %}
         <div class="employee">
             <div class="circle">
-                <img src="{{ MEDIA_URL }}{{ violator.employee.image1 }}">
+                <img src="{{ violator.employee.image1.url }}">
             </div>
             <p>{{violator.employee.name}}</p>
         </div>
