@@ -83,7 +83,7 @@ for category in ctgry:
             
 
 
-lb = LabelBinarizer()
+lb = LabelBinarizer();
 l = lb.fit_transform(l)
 l = to_categorical(l)
 
